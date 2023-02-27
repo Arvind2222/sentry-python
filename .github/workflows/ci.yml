@@ -105,7 +105,7 @@ jobs:
           make apidocs
           cd docs/_build && zip -r gh-pages ./
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: ${{ github.sha }}
           path: docs/_build/gh-pages.zip
