@@ -82,7 +82,7 @@ jobs:
           build_cache_paths: ${{ env.CACHED_BUILD_PATHS }}
           build_cache_key: ${{ env.BUILD_CACHE_KEY }}
       - name: Upload Python Packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ github.sha }}
           path: |
@@ -105,7 +105,7 @@ jobs:
           make apidocs
           cd docs/_build && zip -r gh-pages ./
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ github.sha }}
           path: docs/_build/gh-pages.zip
